@@ -21,7 +21,3 @@ public class GamesController : ControllerBase
         return _context.Games;
     }
 }
-
-public record Game 
-{
-}

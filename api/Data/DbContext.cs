@@ -3,11 +3,10 @@ namespace Data;
 
 public class DataContext : DbContext
 {
-    public DbSet<GameEntity> Games { get; }
-    public DbSet<ResultEntity> Results { get; }
-}
+    public DataContext(DbContextOptions<DataContext> options): base(options)
+    {
+    }
 
-public record ResultEntity: EntityBase
-{
-    public Guid ResultGroup { get; set; }
+    public DbSet<GameEntity> Games { get; protected set; }
+    public DbSet<ResultEntity> Results { get; protected set; }
 }
